@@ -1,0 +1,26 @@
+ext {
+    retrofitVersion = '2.6.1'
+    daggerVersion = '2.46.1'
+    roomVersion = '2.5.2'
+    materialVersion = '1.9.0'
+    composeUiVersion = '1.4.3'
+
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    room = "androidx.room:room-runtime:$roomVersion"
+    roomCompiler = "androidx.room:room-compiler:$roomVersion"
+
+    material = "com.google.android.material:material:$materialVersion"
+
+    composeDebug = "androidx.compose.ui:ui-tooling:$composeUiVersion"
+    composeTestManifest = "androidx.compose.ui:ui-test-manifest:$composeUiVersion"
+    compose = "androidx.compose.ui:ui:$composeUiVersion"
+    composePreview = "androidx.compose.ui:ui-tooling-preview:$composeUiVersion"
+    composeMaterial = 'androidx.compose.material3:material3:1.2.0-alpha03'
+
+    coreKtx = 'androidx.core:core-ktx:1.10.1'
+
+}
