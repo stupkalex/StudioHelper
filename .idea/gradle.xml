@@ -14,8 +14,21 @@
             <option value="$PROJECT_DIR$/core-api" />
             <option value="$PROJECT_DIR$/core-impl" />
             <option value="$PROJECT_DIR$/database" />
+            <option value="$PROJECT_DIR$/feature-account-api" />
+            <option value="$PROJECT_DIR$/feature-account-impl" />
+            <option value="$PROJECT_DIR$/feature-appointment-api" />
+            <option value="$PROJECT_DIR$/feature-appointment-impl" />
+            <option value="$PROJECT_DIR$/feature-auth-api" />
+            <option value="$PROJECT_DIR$/feature-auth-impl" />
+            <option value="$PROJECT_DIR$/feature-expenses-api" />
+            <option value="$PROJECT_DIR$/feature-expenses-impl" />
+            <option value="$PROJECT_DIR$/feature-finance-api" />
+            <option value="$PROJECT_DIR$/feature-finance-impl" />
+            <option value="$PROJECT_DIR$/feature-setting-api" />
+            <option value="$PROJECT_DIR$/feature-setting-impl" />
             <option value="$PROJECT_DIR$/main" />
             <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/proto" />
             <option value="$PROJECT_DIR$/ui-kit" />
           </set>
         </option>

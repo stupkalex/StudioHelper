@@ -1,0 +1,31 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'com.google.protobuf' version '0.9.3'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.19.1'
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+                kotlin {}
+            }
+        }
+    }
+}
+
+dependencies {
+    api 'com.google.protobuf:protobuf-javalite:3.21.12'
+    api 'com.google.protobuf:protobuf-kotlin-lite:3.20.1'
+}

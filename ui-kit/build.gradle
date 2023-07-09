@@ -49,7 +49,7 @@ dependencies {
     implementation coreKtx
 
     implementation compose
-    implementation composeMaterial
+    implementation composeMaterial3
     implementation composePreview
     debugImplementation composeDebug
     debugImplementation composeTestManifest

@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        mavenLocal()
     }
 }
 dependencyResolutionManagement {
@@ -20,3 +21,16 @@ include ':core-api'
 include ':core-impl'
 include ':network'
 include ':database'
+include ':proto'
+include ':feature-finance-impl'
+include ':feature-finance-api'
+include ':feature-expenses-api'
+include ':feature-expenses-impl'
+include ':feature-auth-api'
+include ':feature-auth-impl'
+include ':feature-setting-api'
+include ':feature-setting-impl'
+include ':feature-account-api'
+include ':feature-account-impl'
+include ':feature-appointment-api'
+include ':feature-appointment-impl'

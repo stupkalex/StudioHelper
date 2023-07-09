@@ -1,6 +1,7 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -8,11 +9,9 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.main"
+
         minSdk 26
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -46,6 +45,15 @@ android {
     }
 }
 
+static def generateGitPatchVersion() {
+    try {
+        return "git rev-list HEAD --count".execute().text.trim().toInteger()
+    } catch (Exception e) {
+        e.printStackTraceFile()
+        return 0
+    }
+}
+
 apply from: "$project.rootDir/scripts/deps_versions.gradle"
 
 dependencies {
@@ -61,10 +69,18 @@ dependencies {
     implementation coreKtx
 
     implementation compose
-    implementation composeMaterial
+    implementation composeMaterial3
     implementation composePreview
+    implementation navigationCompose
     debugImplementation composeDebug
     debugImplementation composeTestManifest
 
     implementation project(':ui-kit')
+    implementation project(':core-api')
+    implementation project(':feature-account-api')
+    implementation project(':feature-auth-api')
+    implementation project(':feature-expenses-api')
+    implementation project(':feature-finance-api')
+    implementation project(':feature-setting-api')
+    implementation project(':feature-appointment-api')
 }
