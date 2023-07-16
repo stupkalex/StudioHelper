@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudioHelper"
         tools:targetApi="34"
-        android:name=".App">
+        android:name=".di.App">
         <activity
-            android:name="com.example.main.MainActivity"
+            android:name="com.example.main.FeaturesActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.StudioHelper">

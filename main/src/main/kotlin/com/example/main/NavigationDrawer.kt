@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -17,31 +18,27 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.core_impl.FeaturesApiProvider
 import kotlinx.coroutines.launch
 
 @Composable
 fun NavigationDrawer(
     drawerState: DrawerState,
+    drawerItems: List<NavigationItem>,
+    itemClickListener: (NavigationItem) -> Unit,
     content: @Composable () -> Unit
 ) {
-    val items = listOf<NavigationItem>(
-        NavigationItem.Sessions,
-        NavigationItem.Expenses,
-        NavigationItem.Finance,
-        NavigationItem.Masters,
-        NavigationItem.Setting,
-        NavigationItem.Accounts,
-        NavigationItem.Notifications,
-        NavigationItem.Exit,
-    )
     ModalNavigationDrawer(
         drawerContent = {
             ModalDrawerSheet(
                 Modifier.wrapContentWidth()
             ) {
                 NavigationDriverHeader()
-                items.forEach { item ->
-                    NavigationItem(navigationItem = item)
+                drawerItems.forEach { item ->
+                    NavigationItem(
+                        navigationItem = item,
+                        itemClickListener = itemClickListener
+                    )
                 }
             }
         },
@@ -92,6 +89,43 @@ fun NavigationDriverHeader() {
             thickness = 1.dp,
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.width(172.dp)
+        )
+    }
+}
+
+fun initDrawerItems(featureProvider: FeaturesApiProvider): List<NavigationItem> {
+    with(featureProvider) {
+        return listOf(
+            NavigationItem(
+                titleResId = R.string.expenses,
+                icon = Icons.Default.Favorite,
+                route = getExpensesApi().baseRoute
+            ),
+            NavigationItem(
+                titleResId = R.string.appointments,
+                icon = Icons.Default.Favorite,
+                route = getAppointmentApi().baseRoute
+            ),
+            NavigationItem(
+                titleResId = R.string.finance,
+                icon = Icons.Default.Favorite,
+                route = getFinanceApi().baseRoute
+            ),
+            NavigationItem(
+                titleResId = R.string.account,
+                icon = Icons.Default.Favorite,
+                route = getAccountApi().baseRoute
+            ),
+            NavigationItem(
+                titleResId = R.string.setting,
+                icon = Icons.Default.Favorite,
+                route = getSettingApi().baseRoute
+            ),
+            NavigationItem(
+                titleResId = R.string.do_exit,
+                icon = Icons.Default.Favorite,
+                route = getAccountApi().baseRoute
+            ),
         )
     }
 }

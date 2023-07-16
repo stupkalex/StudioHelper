@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">StudioHelper</string>
-    <string name="sessions">Записи</string>
+    <string name="appointments">Записи</string>
     <string name="expenses">Расходы</string>
     <string name="finance">Финансы</string>
     <string name="masters">Мастера</string>
     <string name="accounts">Аккаунты</string>
+    <string name="account">Аккаунт</string>
     <string name="notifications">Уведомления</string>
     <string name="do_exit">Выйти</string>
     <string name="setting">Настройки</string>
+    <string name="main_screen">Главный экран</string>
 </resources>
