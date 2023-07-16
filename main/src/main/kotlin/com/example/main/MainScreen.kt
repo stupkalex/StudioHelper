@@ -21,9 +21,7 @@ import com.example.feature_appointment_api.FeatureAppointmentApi
 import com.example.feature_expenses_api.FeatureExpensesApi
 import com.example.feature_finance_api.FeatureFinanceApi
 import com.example.feature_setting_api.FeatureSettingApi
-import com.example.main.navigation.AppNavGraph
-import com.example.main.navigation.getFeatureProvider
-import com.example.main.navigation.rememberNavigationState
+import com.example.main.navigation.*
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -86,14 +84,13 @@ fun MainScreen() {
             },
 
             ) {
-            AppNavGraph(
+            MainNavGraph(
                 navHostController = navState.navHostController,
                 appointmentApi = featureProvider.getAppointmentApi(),
                 expensesApi = featureProvider.getExpensesApi(),
                 settingApi = featureProvider.getSettingApi(),
                 financeApi = featureProvider.getFinanceApi(),
-                accountApi = featureProvider.getAccountApi(),
-                authApi = featureProvider.getAuthApi()
+                accountApi = featureProvider.getAccountApi()
             )
         }
     }

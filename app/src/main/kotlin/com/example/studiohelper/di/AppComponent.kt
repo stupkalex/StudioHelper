@@ -53,9 +53,7 @@ interface AppComponent: FeaturesApiProvider {
         fun build(): AppComponent
     }
 
-    override fun getAccountApi(): FeatureAccountApi {
-        return FeatureAccountImpl()
-    }
+    override fun getAccountApi(): FeatureAccountApi
 
     override fun getAppointmentApi(): FeatureAppointmentApi
 
@@ -66,29 +64,5 @@ interface AppComponent: FeaturesApiProvider {
     override fun getFinanceApi(): FeatureFinanceApi
 
     override fun getSettingApi(): FeatureSettingApi
-
-    /*override fun getAccountApi(): FeatureAccountApi {
-        return FeatureAccountImpl()
-    }
-
-    override fun getAppointmentApi(): FeatureAppointmentApi {
-        return FeatureAppointmentImpl()
-    }
-
-    override fun getAuthApi(): FeatureAuthApi {
-        return FeatureAuthImpl()
-    }
-
-    override fun getExpensesApi(): FeatureExpensesApi {
-        return FeatureExpensesImpl()
-    }
-
-    override fun getFinanceApi(): FeatureFinanceApi {
-        return FeatureFinanceImpl()
-    }
-
-    override fun getSettingApi(): FeatureSettingApi {
-        return FeatureSettingImpl()
-    }*/
 
 }

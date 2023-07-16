@@ -4,6 +4,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
+import androidx.navigation.navigation
 import com.example.core_api.FeatureApi
 import com.example.feature_auth_api.FeatureAuthApi
 import com.example.feature_auth_impl.presentation.AuthScreen
@@ -18,7 +19,9 @@ class FeatureAuthImpl @Inject constructor() : FeatureAuthApi {
         navController: NavController,
         modifier: Modifier
     ) {
-        navGraphBuilder.composable(baseRoute) {
+        navGraphBuilder.composable(
+            route = baseRoute
+        ) {
             AuthScreen(
                 modifier = modifier,
                 onNavigateToABFlow = {

@@ -8,7 +8,6 @@ import javax.inject.Singleton
 
 @Module
 interface AuthModule {
-
     @Singleton
     @Binds
     fun bindsAuthApi(impl: FeatureAuthImpl): FeatureAuthApi
